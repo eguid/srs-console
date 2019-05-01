@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="scApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    
+    <title>eguid SRS控制台</title>
+    <link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/srs.console.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body ng-controller="CSCMain" class="ng-scope">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="javascript:void(0)" ng-click="reset()">Eguid SRS Console</a>
+                <ul class="nav">
+                    <li class="active"><a ng-href="#connect" href="ng_index.html#connect">连接SRS</a></li>
+                    <li class=""><a ng-href="#summaries" href="ng_index.html#summaries">概览</a></li>
+                    <li class=""><a ng-href="#vhosts" href="ng_index.html#vhosts">虚拟主机(Vhosts)</a></li>
+                    <li class=""><a ng-href="#streams" href="ng_index.html#streams">视频流(Streams)</a></li>
+                    <li class=""><a ng-href="#clients" href="ng_index.html#clients">客户端(Clients)</a></li>
+                    <li class=""><a ng-href="#configs" href="ng_index.html#configs">配置(RAW)</a></li>
+                    <li class=""><a ng-href="#dvr" href="ng_index.html#dvr">DVR</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- ngView:  --><div ng-view="" class="ng-scope"><div class="ng-scope">
+    <div class="accordion">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" href="javascript:void(0)">
+                    连接到您的SRS服务器
+                </a>
+            </div>
+            <div class="accordion-body collapse in">
+                <div class="accordion-inner">
+                    <div class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label" for="sscServer">服务器IP</label>
+                            <div class="controls">
+                                <input type="text" id="sscServer" placeholder="SRS API Server IP" ng-model="server.ip" class="ng-pristine ng-valid">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="sscPort">API端口</label>
+                            <div class="controls">
+                                <input type="text" id="sscPort" placeholder="SRS API Server Port" ng-model="server.port" class="ng-pristine ng-valid">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="submit" class="btn" ng-click="connect()">连接到SRS</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p> Eguid SRS Console </p>
+			<p> powered by SRS </p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="static/angular.js"></script>
+    <script type="text/javascript" src="static/angular-route.js"></script>
+    <script type="text/javascript" src="static/angular-resource.js"></script>
+    <script type="text/javascript" src="static/winlin.utility.js"></script>
+    <script type="text/javascript" src="static/alert.js"></script>
+    <script type="text/javascript" src="static/popover.js"></script>
+    <script type="text/javascript" src="static/srs.cn.js"></script>
+    <script type="text/javascript" src="static/srs.console.js"></script>
+</body></html>
